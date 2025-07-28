@@ -103,7 +103,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           <div className="aspect-w-16 aspect-h-9">
             {/* Use <video> for local file playback */}
             <video
-              src="https://drive.google.com/file/d/1KMOvri871AjMTSMT_hZoJYakX5cEQLN_/view?usp=sharing"
+              src="https://youtu.be/dPQNu-sqMbU?si=l3-kIQz9y-vZ3hA7"
               controls
               autoPlay
               className="w-full h-full rounded-md"
