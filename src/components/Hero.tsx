@@ -100,13 +100,13 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           >
             <X className="w-6 h-6" />
           </button>
-          <div className="aspect-w-100% aspect-h-100%">
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
             {/* Try YouTube first, fallback to direct message */}
-            <div className="relative w-full h-full bg-slate-800 rounded-md flex items-center justify-center">
+            <div className="absolute inset-0 bg-slate-800 rounded-md">
               <iframe
                 src="https://www.youtube.com/embed/dPQNu-sqMbU?autoplay=1&rel=0"
                 title="SEION Demo Video"
-                className="w-full h-full rounded-md"
+                className="absolute inset-0 w-full h-full rounded-md"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 onError={() => {
@@ -115,7 +115,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                 }}
               />
               {/* Fallback content - only shows if iframe fails */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 bg-slate-800 rounded-md hidden">
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 bg-slate-800 rounded-md hidden z-10">
                 <h3 className="text-xl font-bold mb-4">Demo Video Unavailable</h3>
                 <p className="text-center mb-4">
                   We're experiencing technical difficulties with the video player.
