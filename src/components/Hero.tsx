@@ -100,7 +100,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           >
             <X className="w-6 h-6" />
           </button>
-          <div className="aspect-w-16 aspect-h-9">
+          <div className="aspect-w-100% aspect-h-100%">
             {/* Try YouTube first, fallback to direct message */}
             <div className="relative w-full h-full bg-slate-800 rounded-md flex items-center justify-center">
               <iframe
