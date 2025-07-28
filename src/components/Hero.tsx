@@ -101,15 +101,35 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
             <X className="w-6 h-6" />
           </button>
           <div className="aspect-w-16 aspect-h-9">
-            {/* Use <video> for local file playback */}
-            <video
-              src="https://youtu.be/dPQNu-sqMbU?si=l3-kIQz9y-vZ3hA7"
-              controls
-              autoPlay
-              className="w-full h-full rounded-md"
-            >
-              Your browser does not support the video tag.
-            </video>
+            {/* Try YouTube first, fallback to direct message */}
+            <div className="relative w-full h-full bg-slate-800 rounded-md flex items-center justify-center">
+              <iframe
+                src="https://www.youtube.com/embed/dPQNu-sqMbU?autoplay=1&rel=0"
+                title="SEION Demo Video"
+                className="w-full h-full rounded-md"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                onError={() => {
+                  // Fallback content if iframe fails
+                  console.log('Video failed to load');
+                }}
+              />
+              {/* Fallback content - only shows if iframe fails */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 bg-slate-800 rounded-md hidden">
+                <h3 className="text-xl font-bold mb-4">Demo Video Unavailable</h3>
+                <p className="text-center mb-4">
+                  We're experiencing technical difficulties with the video player.
+                </p>
+                <a
+                  href="https://youtu.be/dPQNu-sqMbU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-aquamarine px-6 py-3 rounded-lg font-semibold"
+                >
+                  Watch on YouTube
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
